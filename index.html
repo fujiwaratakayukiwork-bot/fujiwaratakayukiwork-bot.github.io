@@ -1,32 +1,362 @@
 <!doctype html>
+
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>FUJIWARA WORKS</title>
-  <meta
-    name="description"
-    content="FUJIWARA WORKS official website"
-  >
+
+<meta
+name="description"
+content="FUJIWARA WORKSは、クラウド・SRE、個人開発、ITコーチング、文章など、藤原隆幸の活動と成果物をまとめる個人サイトです。"
+
+>
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111827">
+
+  <style>
+    :root {
+      --background: #f8fafc;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --border: #dce3ea;
+      --accent: #245ea8;
+      --accent-dark: #194778;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Yu Gothic",
+        Meiryo,
+        sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--accent-dark);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    header {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .header-inner {
+      padding: 72px 0 64px;
+    }
+
+    .site-name {
+      margin: 0;
+      font-size: clamp(2.3rem, 7vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+    }
+
+    .tagline {
+      max-width: 640px;
+      margin: 24px 0 0;
+      color: #d7dee9;
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    }
+
+    nav {
+      border-top: 1px solid rgb(255 255 255 / 15%);
+      background: #111827;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin: 0;
+      padding: 16px 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 48px 0 72px;
+    }
+
+    section {
+      padding: 40px;
+      margin-bottom: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      padding: 24px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 3px 10px;
+      color: #334155;
+      font-size: 0.85rem;
+      background: #e8eef5;
+      border-radius: 999px;
+    }
+
+    .button-link {
+      display: inline-block;
+      padding: 11px 18px;
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--accent);
+      border-radius: 8px;
+    }
+
+    .button-link:hover,
+    .button-link:focus {
+      color: #ffffff;
+      background: var(--accent-dark);
+    }
+
+    .notice {
+      padding: 16px 18px;
+      color: #475569;
+      background: #f1f5f9;
+      border-left: 4px solid #94a3b8;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        padding: 52px 0 44px;
+      }
+
+      main {
+        padding-top: 28px;
+      }
+
+      section {
+        padding: 26px 22px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
-  <main>
-    <h1>FUJIWARA WORKS</h1>
+  <header>
+    <div class="container header-inner">
+      <h1 class="site-name">FUJIWARA WORKS</h1>
+      <p class="tagline">
+        Building apps, systems, and ideas.
+      </p>
+    </div>
 
-    <p>Building apps, systems, and ideas.</p>
-
-    <h2>Projects</h2>
-    <ul>
-      <li>iOS Apps</li>
-      <li>Cloud / SRE</li>
-      <li>Writing</li>
+```
+<nav aria-label="主要メニュー">
+  <div class="container">
+    <ul class="nav-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </div>
+</nav>
+```
 
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+
+```
+  <p>
+    藤原隆幸。クラウドエンジニア／SRE。
+  </p>
+
+  <p>
+    プログラミング、ITインフラ、クラウド、
+    技術サポート、チーム運営など、
+    IT分野で30年以上の経験があります。
+  </p>
+
+  <p>
+    FUJIWARA WORKSでは、クラウド・SRE、
+    個人開発、ITコーチング、文章など、
+    これまでの経験から生まれた活動や成果物を公開しています。
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-grid">
+    <article class="project-card">
+      <h3>iOS Apps</h3>
+      <p>
+        小規模なiPhoneアプリを開発しています。
+        最初の目標は、App Storeにアプリを1本公開することです。
+      </p>
+      <span class="status">In Progress</span>
+    </article>
+
+    <article class="project-card">
+      <h3>Cloud / SRE</h3>
+      <p>
+        クラウド設計、運用改善、障害対応、
+        信頼性やセキュリティに関する知見を整理します。
+      </p>
+      <span class="status">Preparing</span>
+    </article>
+
+    <article class="project-card">
+      <h3>Writing</h3>
+      <p>
+        技術、キャリア、個人開発、学習、
+        働き方について発信します。
+      </p>
+      <span class="status">Preparing</span>
+    </article>
+  </div>
+</section>
+
+<section id="coaching">
   <h2>IT Coaching / Mentoring</h2>
-    <ul>
-      <li>Coach at TECH FOR YOU</li>
-      <li>Supporting engineers with cloud, infrastructure,career development, and technical problem-solving.</li>
-    </ul>
+
+  <p>
+    エンジニアの技術、キャリア、働き方に関する相談を行っています。
+  </p>
+
+  <p>
+    技術的な答えを一方的に提示するのではなく、
+    現在の状況、経験、希望を整理し、
+    本人が判断するための選択肢と具体的な行動を一緒に考えます。
+  </p>
+
+  <p>
+    <a
+      class="button-link"
+      href="https://tech4you.jp/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TECH FOR YOUを見る
+    </a>
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <p>
+    ITコーチング、キャリア相談、技術相談については、
+    現在TECH FOR YOUを通じて受け付けています。
+  </p>
+
+  <p class="notice">
+    スパムおよび不正利用防止のため、
+    メールアドレスは当サイト上で直接公開していません。
+    その他のお問い合わせ方法は、今後このページでご案内します。
+  </p>
+</section>
+```
+
   </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2026 FUJIWARA WORKS
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
