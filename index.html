@@ -1,723 +1,107 @@
 <!doctype html>
-
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FUJIWARA WORKS — Cloud, systems, coaching, and ideas.</title>
+  <meta name="description" content="30年以上のIT経験を基盤に、クラウド・SRE、ITインフラ、技術支援、個人開発、ITコーチングに取り組む藤原隆幸の個人サイト。">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f2efe6">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
 
-  <title>FUJIWARA WORKS</title>
-
-<meta
-name="description"
-content="FUJIWARA WORKSは、クラウド・SRE、ITインフラ、個人開発、ITコーチング、文章など、藤原隆幸の活動と成果物をまとめる個人サイトです。"
-
->
-
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#111827">
-
-  <style>
-    :root {
-      --background: #f8fafc;
-      --surface: #ffffff;
-      --surface-soft: #f1f5f9;
-      --text: #172033;
-      --muted: #5f6b7a;
-      --border: #dce3ea;
-      --accent: #245ea8;
-      --accent-dark: #194778;
-      --success-text: #166534;
-      --success-bg: #dcfce7;
-      --max-width: 1040px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--background);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
-        "Yu Gothic",
-        Meiryo,
-        sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    a:hover,
-    a:focus {
-      color: var(--accent-dark);
-    }
-
-    a:focus-visible {
-      outline: 3px solid rgb(36 94 168 / 35%);
-      outline-offset: 3px;
-    }
-
-    .container {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin-inline: auto;
-    }
-
-    header {
-      color: #ffffff;
-      background:
-        linear-gradient(
-          135deg,
-          #111827 0%,
-          #172554 100%
-        );
-    }
-
-    .header-inner {
-      padding: 76px 0 64px;
-    }
-
-    .site-name {
-      margin: 0;
-      font-size: clamp(2.3rem, 7vw, 4.8rem);
-      line-height: 1.05;
-      letter-spacing: 0.04em;
-    }
-
-    .tagline {
-      max-width: 760px;
-      margin: 24px 0 0;
-      color: #d7dee9;
-      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-    }
-
-    .summary {
-      max-width: 760px;
-      margin: 16px 0 0;
-      color: #b9c5d6;
-    }
-
-    nav {
-      border-top: 1px solid rgb(255 255 255 / 15%);
-      background: rgb(17 24 39 / 88%);
-      backdrop-filter: blur(8px);
-    }
-
-    .nav-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      margin: 0;
-      padding: 16px 0;
-      list-style: none;
-    }
-
-    .nav-list a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .nav-list a:hover,
-    .nav-list a:focus {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 48px 0 72px;
-    }
-
-    section {
-      padding: 40px;
-      margin-bottom: 28px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgb(15 23 42 / 4%);
-    }
-
-    h2 {
-      margin: 0 0 22px;
-      font-size: clamp(1.6rem, 4vw, 2rem);
-      line-height: 1.3;
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-      line-height: 1.4;
-    }
-
-    p {
-      margin: 0 0 16px;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    ul {
-      padding-left: 1.25rem;
-    }
-
-    .lead {
-      font-size: 1.05rem;
-    }
-
-    .profile-grid,
-    .project-grid,
-    .skill-grid,
-    .credential-grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .profile-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .project-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .skill-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .credential-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      padding: 24px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .project-card .card-link {
-      margin-top: auto;
-      padding-top: 8px;
-    }
-
-    .status {
-      display: inline-block;
-      align-self: flex-start;
-      margin-top: 10px;
-      padding: 3px 10px;
-      color: #334155;
-      font-size: 0.85rem;
-      background: #e8eef5;
-      border-radius: 999px;
-    }
-
-    .status-active {
-      color: var(--success-text);
-      background: var(--success-bg);
-    }
-
-    .button-link {
-      display: inline-block;
-      padding: 11px 18px;
-      color: #ffffff;
-      font-weight: 600;
-      text-decoration: none;
-      background: var(--accent);
-      border-radius: 8px;
-    }
-
-    .button-link:hover,
-    .button-link:focus {
-      color: #ffffff;
-      background: var(--accent-dark);
-    }
-
-    .career-list {
-      display: grid;
-      gap: 18px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .career-item {
-      padding: 20px 22px;
-      background: var(--surface-soft);
-      border-left: 4px solid var(--accent);
-      border-radius: 8px;
-    }
-
-    .career-item strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .career-item span {
-      color: var(--muted);
-    }
-
-    .notice {
-      padding: 16px 18px;
-      color: #475569;
-      background: var(--surface-soft);
-      border-left: 4px solid #94a3b8;
-    }
-
-    footer {
-      padding: 28px 0;
-      color: #cbd5e1;
-      background: #111827;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 820px) {
-      .skill-grid,
-      .credential-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .header-inner {
-        padding: 52px 0 44px;
-      }
-
-      main {
-        padding-top: 28px;
-      }
-
-      section {
-        padding: 26px 22px;
-      }
-
-      .profile-grid,
-      .project-grid,
-      .skill-grid,
-      .credential-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FUJIWARA WORKS — Cloud, systems, coaching, and ideas.">
+  <meta property="og:description" content="30年以上のIT経験を基盤に、クラウド・SRE、ITインフラ、技術支援、個人開発、ITコーチングに取り組む藤原隆幸の個人サイト。">
+  <meta property="og:url" content="https://fujiwaraworks.com/">
+  <meta property="og:image" content="https://fujiwaraworks.com/og.png">
+  <meta property="og:image:width" content="1734">
+  <meta property="og:image:height" content="907">
+  <meta property="og:image:alt" content="FUJIWARA WORKS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FUJIWARA WORKS — Cloud, systems, coaching, and ideas.">
+  <meta name="twitter:description" content="30年以上のIT経験を基盤に、クラウド・SRE、ITインフラ、技術支援、個人開発、ITコーチングに取り組む藤原隆幸の個人サイト。">
+  <meta name="twitter:image" content="https://fujiwaraworks.com/og.png">
 </head>
-
 <body>
-  <header>
-    <div class="container header-inner">
-      <h1 class="site-name">FUJIWARA WORKS</h1>
-
-```
-  <p class="tagline">
-    Cloud, systems, coaching, and ideas.
-  </p>
-
-  <p class="summary">
-    30年以上のIT経験を基盤に、
-    クラウド・SRE、ITインフラ、技術支援、
-    個人開発、ITコーチングに取り組んでいます。
-  </p>
-</div>
-
-<nav aria-label="主要メニュー">
-  <div class="container">
-    <ul class="nav-list">
-      <li><a href="#about">About</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#career">Career</a></li>
-      <li><a href="#projects">Projects &amp; Activities</a></li>
-      <li><a href="#credentials">Credentials</a></li>
-      <li><a href="#coaching">Coaching</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-```
-
+<main>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="FUJIWARA WORKS ホーム"><span class="brand-f">F</span><span>FUJIWARA<br>WORKS</span></a>
+    <nav aria-label="メインナビゲーション"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#coaching">Coaching</a></nav>
+    <a class="header-cta" href="#contact">Contact <span aria-hidden="true">↗</span></a>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About</h2>
-
-```
-  <p class="lead">
-    藤原隆幸。クラウドエンジニア／SRE。
-  </p>
-
-  <p>
-    プログラミング、ITインフラ、クラウド、
-    技術サポート、システム運用、コンサルティング、
-    チームリードなど、IT分野で30年以上の経験があります。
-  </p>
-
-  <p>
-    オンプレミスからクラウドまで、
-    システムの企画、設計、構築、移行、運用、保守、
-    障害対応を一貫して経験してきました。
-  </p>
-
-  <p>
-    現在は、Google Cloudを中心としたクラウド技術、
-    SRE、エンタープライズサポート、
-    グローバルチームとの連携を主な専門領域としています。
-  </p>
-
-  <p>
-    FUJIWARA WORKSでは、
-    これまでの経験から生まれた技術的知見、
-    個人開発、ITコーチング、文章などを公開しています。
-  </p>
-</section>
-
-<section id="expertise">
-  <h2>Expertise</h2>
-
-  <div class="skill-grid">
-    <article class="card">
-      <h3>Cloud / SRE</h3>
-      <ul>
-        <li>Google Cloud</li>
-        <li>Compute Engine / GKE</li>
-        <li>IAM / VPC / Security</li>
-        <li>Cloud Logging / Monitoring</li>
-        <li>障害対応と継続的改善</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>IT Infrastructure</h3>
-      <ul>
-        <li>サーバー、ネットワーク、クライアント</li>
-        <li>Windows Server / Linux</li>
-        <li>仮想化、バックアップ、移行</li>
-        <li>Microsoft 365</li>
-        <li>オンプレミスからクラウドまでの運用</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Technical Support</h3>
-      <ul>
-        <li>エンタープライズ技術支援</li>
-        <li>トラブルシューティング</li>
-        <li>設計レビュー</li>
-        <li>顧客課題の整理</li>
-        <li>日英でのグローバル連携</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Consulting</h3>
-      <ul>
-        <li>現状分析と課題定義</li>
-        <li>改善案の策定</li>
-        <li>導入計画とリスク整理</li>
-        <li>運用負荷と継続性の評価</li>
-        <li>技術と業務の橋渡し</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Operations</h3>
-      <ul>
-        <li>24×7運用</li>
-        <li>重大インシデント対応</li>
-        <li>SLAを意識したサービス管理</li>
-        <li>ログ分析と予兆検知</li>
-        <li>手順・運用プロセスの標準化</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Team Leadership</h3>
-      <ul>
-        <li>複数チーム間の調整</li>
-        <li>メンバー支援</li>
-        <li>情報共有とナレッジ整備</li>
-        <li>進捗、品質、リスク管理</li>
-        <li>多様な背景を持つメンバーとの協働</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<section id="career">
-  <h2>Career Overview</h2>
-
-  <p>
-    公開情報として必要な範囲に限定し、
-    所属企業名や顧客名を記載せず、
-    経験領域を要約しています。
-  </p>
-
-  <ul class="career-list">
-    <li class="career-item">
-      <strong>Cloud Engineer / SRE</strong>
-      <span>
-        Google Cloudの技術支援、設計レビュー、
-        トラブルシューティング、重大インシデント対応、
-        海外のSRE・開発チームとの連携。
-      </span>
-    </li>
-
-    <li class="career-item">
-      <strong>IT Infrastructure Engineer / Team Lead</strong>
-      <span>
-        顧客企業のITインフラ運用、サーバー移行、
-        Microsoft 365導入、テレワーク基盤構築、
-        複数チームの調整とメンバー支援。
-      </span>
-    </li>
-
-    <li class="career-item">
-      <strong>Enterprise Technical Support</strong>
-      <span>
-        エンタープライズ向けソフトウェアの技術支援、
-        メール基盤移行、電話・メールによる問題解決。
-      </span>
-    </li>
-
-    <li class="career-item">
-      <strong>Infrastructure Consulting</strong>
-      <span>
-        IT環境の現状分析、システム改善、
-        セキュリティ強化、バックアップ、
-        サーバー・ネットワーク導入、運用設計。
-      </span>
-    </li>
-
-    <li class="career-item">
-      <strong>Software Development</strong>
-      <span>
-        C / C++を使用したシステム開発、
-        基本設計、詳細設計、実装、テスト、
-        本番移行、技術ドキュメント作成。
-      </span>
-    </li>
-  </ul>
-</section>
-
-<section id="projects">
-  <h2>Projects &amp; Activities</h2>
-
-  <div class="project-grid">
-    <article class="card project-card">
-      <h3>IT Coaching at TECH FOR YOU</h3>
-
-      <p>
-        エンジニア向け相談サービス「TECH FOR YOU」に、
-        ITコーチとして登録・掲載されています。
-      </p>
-
-      <p>
-        クラウド、インフラ、技術課題に加え、
-        キャリア、働き方、経験の整理に関する相談に対応しています。
-      </p>
-
-      <p>
-        相談者の状況や希望を確認しながら、
-        選択肢、判断基準、次の行動を
-        一緒に整理することを重視しています。
-      </p>
-
-      <p class="card-link">
-        <a
-          href="https://tech4you.jp/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          TECH FOR YOUで活動を見る
-        </a>
-      </p>
-
-      <span class="status status-active">Active</span>
-    </article>
-
-    <article class="card project-card">
-      <h3>iOS Apps</h3>
-
-      <p>
-        小規模なiPhoneアプリを開発しています。
-        最初の目標は、App Storeにアプリを1本公開することです。
-      </p>
-
-      <p>
-        自分自身が利用できること、
-        小さく完成させて公開すること、
-        継続して改善できることを重視しています。
-      </p>
-
-      <span class="status">In Progress</span>
-    </article>
-
-    <article class="card project-card">
-      <h3>Cloud / SRE Writing</h3>
-
-      <p>
-        クラウド設計、SRE、障害対応、
-        セキュリティ、運用改善に関する知見を整理します。
-      </p>
-
-      <p>
-        理想論だけでなく、
-        導入可能性、運用負荷、障害時の影響、
-        ロールバックまで考慮します。
-      </p>
-
-      <span class="status">Preparing</span>
-    </article>
-
-    <article class="card project-card">
-      <h3>FUJIWARA WORKS</h3>
-
-      <p>
-        技術、個人開発、ITコーチング、
-       文章や学習記録などを集約する個人ブランドです。
-      </p>
-
-      <p>
-        IT分野に限定せず、
-        自分が作ったもの、考えたこと、
-        学んだことを継続的に公開します。
-      </p>
-
-      <span class="status status-active">Active</span>
-    </article>
-  </div>
-</section>
-
-<section id="credentials">
-  <h2>Credentials</h2>
-
-  <div class="credential-grid">
-    <article class="card">
-      <h3>Google Cloud</h3>
-      <p>
-        Professional Cloud Architect
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Google Cloud</h3>
-      <p>
-        Associate Cloud Engineer
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>AWS</h3>
-      <p>
-        Certified Solutions Architect – Associate
-      </p>
-    </article>
-  </div>
-</section>
-
-<section id="coaching">
-  <h2>IT Coaching / Mentoring</h2>
-
-  <p>
-    エンジニアの技術、キャリア、働き方に関する相談を行っています。
-  </p>
-
-  <p>
-    技術的な答えを一方的に提示するのではなく、
-    現在の状況、経験、制約、希望を整理し、
-    本人が判断するための選択肢と具体的な行動を一緒に考えます。
-  </p>
-
-  <div class="profile-grid">
-    <article class="card">
-      <h3>相談領域</h3>
-      <ul>
-        <li>クラウド、インフラ、SRE</li>
-        <li>技術的な問題の整理</li>
-        <li>エンジニアとしてのキャリア設計</li>
-        <li>経験・強みの棚卸し</li>
-        <li>働き方と技術領域の選択</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>支援方針</h3>
-      <ul>
-        <li>状況を丁寧に確認する</li>
-        <li>選択肢とトレードオフを整理する</li>
-        <li>短期と長期の両面から考える</li>
-        <li>継続可能性を重視する</li>
-        <li>次の具体的な行動を明確にする</li>
-      </ul>
-    </article>
-  </div>
-
-  <p>
-    <a
-      class="button-link"
-      href="https://tech4you.jp/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      TECH FOR YOUを見る
-    </a>
-  </p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-
-  <p>
-    ITコーチング、キャリア相談、技術相談については、
-    現在TECH FOR YOUを通じて受け付けています。
-  </p>
-
-  <p class="notice">
-    スパム、不正利用、個人情報保護の観点から、
-    電話番号、個人メールアドレス、勤務先、
-    詳細な職歴、生活に関する情報は、
-    当サイト上で直接公開していません。
-    その他のお問い合わせ方法は、
-    今後このページでご案内します。
-  </p>
-</section>
-```
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>
-        &copy; 2026 FUJIWARA WORKS
-      </p>
+  <section class="hero" id="top">
+    <div class="hero-system" aria-hidden="true"><span></span><span></span><span></span><b>30+</b></div>
+    <p class="eyebrow">CLOUD ENGINEER / SITE RELIABILITY ENGINEER</p>
+    <h1>技術と経験で、<br><em>次の一歩を確かに。</em></h1>
+    <div class="hero-bottom">
+      <p><strong>藤原 隆幸</strong><br>30年以上のIT経験を基盤に、クラウド・SRE、ITインフラ、技術支援、個人開発、ITコーチングに取り組んでいます。</p>
+      <a class="round-link" href="#expertise"><span>VIEW<br>EXPERTISE</span><span aria-hidden="true">↗</span></a>
     </div>
+    <div class="ticker"><span>CLOUD · SYSTEMS · COACHING · IDEAS — FUJIWARA WORKS — CLOUD · SYSTEMS · COACHING · IDEAS</span></div>
+  </section>
+
+  <section class="about section-pad" id="about">
+    <p class="section-index">01 — ABOUT</p>
+    <div>
+      <p class="eyebrow">TAKAYUKI FUJIWARA</p>
+      <h2>オンプレミスからクラウドまで。<br>システムの一生に、<em>向き合ってきました。</em></h2>
+      <div class="about-grid">
+        <p>プログラミング、ITインフラ、クラウド、技術サポート、システム運用、コンサルティング、チームリード。企画・設計・構築・移行・運用・保守・障害対応を一貫して経験してきました。</p>
+        <p>現在はGoogle Cloudを中心としたクラウド技術、SRE、エンタープライズサポート、グローバルチームとの連携を主な専門領域としています。</p>
+      </div>
+      <div class="stat-row"><div><b>30+</b><span>YEARS IN IT</span></div><div><b>3</b><span>CLOUD CREDENTIALS</span></div><div><b>24×7</b><span>OPERATIONS EXPERIENCE</span></div></div>
+    </div>
+  </section>
+
+  <section class="expertise" id="expertise">
+    <div class="section-head section-pad"><p class="section-index">02 — EXPERTISE</p><h2>現場で培った、<br><em>実装できる専門性。</em></h2></div>
+    <div class="skill-list">
+      <article><span class="skill-no">01</span><div><h3>Cloud / SRE</h3><p>Google Cloudを中心に、Compute Engine・GKE・IAM・VPC・Security・Logging・Monitoring。設計レビューから重大インシデント対応、継続的改善まで。</p><div class="tags"><span>Google Cloud</span><span>GKE</span><span>SRE</span></div></div><span aria-hidden="true">↗</span></article>
+      <article><span class="skill-no">02</span><div><h3>IT Infrastructure</h3><p>Windows Server・Linux、ネットワーク、仮想化、バックアップ、Microsoft 365。オンプレミスからクラウドへの移行と運用。</p><div class="tags"><span>Windows / Linux</span><span>Migration</span><span>Microsoft 365</span></div></div><span aria-hidden="true">↗</span></article>
+      <article><span class="skill-no">03</span><div><h3>Technical Support</h3><p>エンタープライズ環境のトラブルシューティング、顧客課題の整理、設計レビュー。日英でのグローバルチーム連携。</p><div class="tags"><span>Troubleshooting</span><span>Enterprise</span><span>Global</span></div></div><span aria-hidden="true">↗</span></article>
+      <article><span class="skill-no">04</span><div><h3>Consulting &amp; Operations</h3><p>現状分析、課題定義、導入計画、リスク整理。24×7運用やSLAを意識し、技術と業務のあいだをつなぎます。</p><div class="tags"><span>Consulting</span><span>Operations</span><span>Leadership</span></div></div><span aria-hidden="true">↗</span></article>
+    </div>
+  </section>
+
+  <section class="career section-pad" id="career">
+    <div class="career-title"><p class="section-index">03 — CAREER OVERVIEW</p><h2>積み重ねた経験を、<br>次の課題へ。</h2><p>所属企業名や顧客名を記載せず、公開可能な経験領域に限定しています。</p></div>
+    <div class="timeline">
+      <article><span>01</span><div><h3>Cloud Engineer / SRE</h3><p>Google Cloudの技術支援、設計レビュー、トラブルシューティング、重大インシデント対応、海外のSRE・開発チームとの連携。</p></div></article>
+      <article><span>02</span><div><h3>IT Infrastructure Engineer / Team Lead</h3><p>ITインフラ運用、サーバー移行、Microsoft 365導入、テレワーク基盤構築、複数チームの調整とメンバー支援。</p></div></article>
+      <article><span>03</span><div><h3>Enterprise Technical Support</h3><p>エンタープライズ向けソフトウェアの技術支援、メール基盤移行、電話・メールによる問題解決。</p></div></article>
+      <article><span>04</span><div><h3>Infrastructure Consulting</h3><p>IT環境の現状分析、システム改善、セキュリティ強化、バックアップ、運用設計。</p></div></article>
+      <article><span>05</span><div><h3>Software Development</h3><p>C / C++による基本設計、詳細設計、実装、テスト、本番移行、技術ドキュメント作成。</p></div></article>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="section-head section-pad"><p class="section-index">04 — PROJECTS &amp; ACTIVITIES</p><h2>技術を、<br><em>人と成果につなぐ。</em></h2></div>
+    <div class="project-grid">
+      <article class="project-card blue"><div class="project-meta"><span>ACTIVE</span><span>COACHING</span></div><div class="project-visual coaching-visual" aria-hidden="true"><span>LISTEN</span><span>CLARIFY</span><span>ACT</span></div><div class="project-copy"><h3>IT Coaching at<br>TECH FOR YOU</h3><p>クラウド・インフラ・技術課題だけでなく、キャリア、働き方、経験の整理まで。判断基準と次の行動を一緒に明確にします。</p><a href="https://tech4you.jp/" target="_blank" rel="noopener noreferrer">TECH FOR YOUを見る <span aria-hidden="true">↗</span></a></div></article>
+      <article class="project-card orange"><div class="project-meta"><span>IN PROGRESS</span><span>PERSONAL DEVELOPMENT</span></div><div class="project-visual app-visual" aria-hidden="true"><div><i></i><i></i><i></i></div><b>iOS</b></div><div class="project-copy"><h3>Small iOS Apps</h3><p>自分自身が使える小規模なiPhoneアプリを開発中。小さく完成させ、公開し、継続して改善することを大切にしています。</p></div></article>
+      <article class="project-card dark"><div class="project-meta"><span>PREPARING</span><span>WRITING</span></div><div class="project-visual writing-visual" aria-hidden="true"><span>DESIGN</span><span>OBSERVE</span><span>IMPROVE</span></div><div class="project-copy"><h3>Cloud / SRE Writing</h3><p>クラウド設計、SRE、障害対応、セキュリティ、運用改善。導入可能性やロールバックまで含む、現場のための知見を整理します。</p></div></article>
+    </div>
+  </section>
+
+  <section class="credentials section-pad">
+    <p class="section-index">05 — CREDENTIALS</p>
+    <div><h2>Cloud<br><em>credentials.</em></h2><div class="credential-list"><article><span>GOOGLE CLOUD</span><h3>Professional<br>Cloud Architect</h3></article><article><span>GOOGLE CLOUD</span><h3>Associate<br>Cloud Engineer</h3></article><article><span>AMAZON WEB SERVICES</span><h3>Solutions Architect<br>— Associate</h3></article></div></div>
+  </section>
+
+  <section class="coaching" id="coaching">
+    <div class="coach-orbit" aria-hidden="true"><span>?</span></div>
+    <p class="section-index">06 — COACHING / MENTORING</p>
+    <div class="coach-copy"><p class="eyebrow">NOT JUST AN ANSWER, A WAY FORWARD.</p><h2>答えを渡すのではなく、<br><em>判断できる状態をつくる。</em></h2><p>現在の状況、経験、制約、希望を丁寧に整理。選択肢とトレードオフを見えるようにし、短期と長期の両面から、継続できる次の一歩を考えます。</p><a class="button-light" href="https://tech4you.jp/" target="_blank" rel="noopener noreferrer">相談サービスを見る <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <footer id="contact">
+    <p class="section-index">07 — CONTACT</p>
+    <div class="footer-lead"><p class="eyebrow">CLOUD / CAREER / TECHNICAL CONSULTATION</p><h2>次の一歩を、<br><em>一緒に整理しましょう。</em></h2><p>ITコーチング、キャリア相談、技術相談は、現在TECH FOR YOUを通じて受け付けています。</p><a class="contact-link" href="https://tech4you.jp/" target="_blank" rel="noopener noreferrer">TECH FOR YOU <span aria-hidden="true">↗</span></a></div>
+    <div class="privacy-note">個人情報保護のため、電話番号、個人メールアドレス、勤務先、詳細な職歴は公開していません。</div>
+    <div class="footer-bottom"><a class="brand" href="#top"><span class="brand-f">F</span><span>FUJIWARA<br>WORKS</span></a><div><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a></div><p>© 2026 FUJIWARA WORKS</p></div>
   </footer>
+</main>
 </body>
 </html>
