@@ -10,3 +10,106 @@
 .coaching{position:relative;min-height:900px;background:var(--blue);color:white;padding:85px 6vw;overflow:hidden}.coach-copy{position:relative;z-index:1;max-width:1000px;margin:180px auto 80px}.coach-copy h2{font-size:clamp(55px,7.7vw,110px);margin:30px 0}.coach-copy>p:not(.eyebrow){max-width:600px;margin:0 0 40px auto;line-height:1.9;color:rgba(255,255,255,.75)}.button-light{display:flex;width:max-content;gap:45px;padding:17px 20px;background:white;color:#111;font-size:12px;margin-left:auto}.coach-orbit{position:absolute;right:-12vw;top:5%;width:65vw;height:65vw;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center}.coach-orbit:before,.coach-orbit:after{content:"";position:absolute;inset:17%;border:1px solid rgba(255,255,255,.25);border-radius:50%}.coach-orbit:after{inset:34%}.coach-orbit span{font:20vw Georgia;opacity:.09}
 footer{background:#0c0c0b;color:#f4f1e8;padding:85px 6vw 35px}.footer-lead{padding:120px 0 140px}.footer-lead h2{font-size:clamp(60px,8.5vw,125px);margin:30px 0 45px}.footer-lead>p:not(.eyebrow){max-width:570px;line-height:1.8;color:#aaa}.contact-link{display:inline-flex;gap:35px;margin-top:35px;border-bottom:1px solid;padding-bottom:8px;font-size:clamp(22px,3vw,38px)}.privacy-note{border-top:1px solid #444;padding:24px 0;color:#777;font-size:11px}.footer-bottom{border-top:1px solid #444;padding-top:30px;display:grid;grid-template-columns:1fr 1fr auto;align-items:center}.footer-bottom .brand-f{background:var(--paper);color:var(--ink)}.footer-bottom>div{display:flex;gap:25px;font-size:11px}.footer-bottom p{font:10px var(--font-mono);color:#777}
 @media(max-width:800px){.site-header{grid-template-columns:1fr auto}.site-header nav{display:none}.hero{padding:145px 22px 75px}.hero h1{font-size:56px;margin-bottom:50px}.hero-system{width:100vw;height:100vw;right:-60vw;top:15%}.hero-system b{font-size:25vw}.hero-bottom{width:100%;margin:0;display:block}.hero-bottom p{max-width:78%;font-size:14px}.round-link{position:absolute;right:0;bottom:-5px;width:88px;height:88px}.section-pad{padding:82px 22px}.about,.section-head,.career,.credentials{grid-template-columns:1fr;gap:40px}.about-grid{grid-template-columns:1fr;gap:10px;margin:40px 0 60px}.stat-row b{font-size:35px}.stat-row span{font-size:7px}.skill-list article{grid-template-columns:34px 1fr 15px;padding:30px 22px;gap:12px}.skill-list h3{font-size:27px}.project-grid{grid-template-columns:1fr}.project-card:first-child{grid-column:auto}.project-card{min-height:580px;padding:22px}.coaching-visual span{width:42vw;height:42vw;margin-left:-11vw}.project-copy{grid-template-columns:1fr;gap:15px}.project-copy h3{font-size:29px}.writing-visual span{font-size:10vw}.credential-list{grid-template-columns:1fr}.credential-list article{min-height:auto}.credential-list article+article{border-left:0}.credential-list h3{margin:35px 0 0}.coaching{padding:65px 22px;min-height:760px}.coach-copy{margin-top:160px}.coach-copy h2{font-size:50px}.coach-orbit{width:110vw;height:110vw;right:-60vw}.footer-lead{padding:100px 0}.footer-lead h2{font-size:56px}.footer-bottom{grid-template-columns:1fr;gap:28px}.footer-bottom>div{flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Responsive refinements: desktop styles above remain the 1024px+ baseline. */
+.menu-toggle,.mobile-only{display:none}
+:where(a,button):focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+img,svg{max-width:100%;height:auto}
+
+@media (min-width:641px) and (max-width:1023px){
+  .site-header{grid-template-columns:1fr auto auto;padding:20px 24px;gap:22px}
+  .site-header nav{display:flex;gap:16px}
+  .header-cta{display:block}
+  .hero{padding:155px 5vw 82px}
+  .hero h1{font-size:clamp(58px,8.5vw,86px);margin:28px 0 56px}
+  .hero-system{width:62vw;height:62vw;right:-18vw;top:12%}
+  .hero-system b{font-size:17vw}
+  .hero-bottom{width:76%;margin-left:auto;display:flex}
+  .hero-bottom p{max-width:500px;font-size:16px}
+  .round-link{position:static;width:100px;height:100px;flex:0 0 auto}
+  .section-pad{padding:96px 5vw}
+  .about,.career,.credentials{grid-template-columns:1fr;gap:48px}
+  .section-head{grid-template-columns:1fr 2.4fr}
+  .stat-row span{font-size:10px}
+  .skill-list article{grid-template-columns:6vw 1fr 24px;padding:36px 5vw;gap:22px}
+  .project-grid{grid-template-columns:1fr 1fr}
+  .project-card{min-width:0;min-height:560px;margin:0 8px 12px;padding:24px}
+  .project-card:first-child{grid-column:span 2;min-height:620px}
+  .coaching-visual span{width:25vw;height:25vw;margin-left:-6vw}
+  .project-copy{grid-template-columns:1fr;gap:16px}
+  .writing-visual span{font-size:6.5vw}
+  .credential-list{grid-template-columns:repeat(3,1fr)}
+  .credential-list article{min-height:210px}
+  .credential-list article+article{border-left:1px solid var(--line)}
+  .credential-list h3{font-size:22px;margin:55px 0 0}
+  .coaching{min-height:780px;padding:75px 5vw}
+  .coach-copy{margin-top:150px}
+  .coach-copy h2{font-size:clamp(54px,7.5vw,76px)}
+  .footer-bottom{grid-template-columns:1fr 1fr auto;gap:20px}
+}
+
+@media (max-width:640px){
+  html,body{max-width:100%;overflow-x:clip}
+  body{font-size:16px}
+  p,a{overflow-wrap:anywhere}
+  .desktop-only{display:none}
+  .mobile-only{display:inline}
+  .site-header{grid-template-columns:1fr auto;padding:16px 18px;background:rgba(242,239,230,.96)}
+  .menu-toggle{display:grid;place-items:center;min-width:64px;min-height:44px;padding:0 12px;border:1px solid var(--ink);background:transparent;color:inherit;font:11px var(--font-mono);letter-spacing:.12em;cursor:pointer}
+  .header-cta{display:none}
+  .site-header nav{position:absolute;top:100%;left:0;width:100%;display:none;flex-direction:column;gap:0;padding:8px 18px 16px;background:var(--paper);border-bottom:1px solid var(--line);font-size:16px}
+  .site-header.menu-open nav{display:flex}
+  .site-header nav a{display:flex;align-items:center;min-height:46px;border-bottom:1px solid var(--line)}
+  .hero{min-height:100svh;padding:132px 22px 72px}
+  .hero h1{font-size:clamp(32px,10.5vw,46px);line-height:.96;letter-spacing:-.085em;margin:26px 0 48px}
+  .hero-system{width:190px;height:190px;right:-20px;top:104px}
+  .hero-system b{font-size:58px}
+  .hero-bottom{width:100%;margin:0;display:block}
+  .hero-bottom p{max-width:none;padding-right:88px;font-size:16px;line-height:1.8}
+  .hero-bottom strong{font-size:20px}
+  .round-link{right:0;bottom:0;width:82px;height:82px}
+  .eyebrow,.section-index,.project-meta,.tags,.skill-no{font-size:11px}
+  .section-pad{padding:76px 22px}
+  .about h2,.section-head h2,.career h2,.credentials h2,.coach-copy h2,.footer-lead h2{font-size:clamp(39px,12vw,52px);line-height:1.03}
+  .about-grid p,.skill-list p,.timeline p,.project-copy p,.coach-copy>p:not(.eyebrow),.footer-lead>p:not(.eyebrow){font-size:16px}
+  .about-grid{margin:34px 0 48px}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .stat-row>div{min-width:0;padding:24px 14px}
+  .stat-row>div:nth-child(3){grid-column:1/-1;border-top:1px solid var(--line);border-left:0}
+  .stat-row b{font-size:38px}
+  .stat-row span{font-size:11px;overflow-wrap:anywhere}
+  .skill-list article{grid-template-columns:28px minmax(0,1fr) 14px;padding:28px 22px;gap:10px}
+  .skill-list h3{font-size:26px}
+  .career-title h2{margin:34px 0}
+  .timeline article{grid-template-columns:32px minmax(0,1fr);padding:24px 0}
+  .timeline h3{font-size:22px}
+  .project-grid{grid-template-columns:minmax(0,1fr)}
+  .project-card,.project-card:first-child{grid-column:auto;min-width:0;min-height:auto;margin:0 12px 12px;padding:22px}
+  .project-meta{gap:14px;flex-wrap:wrap}
+  .project-visual{flex:none;min-width:0;height:220px;margin:28px 0}
+  .project-card:first-child .project-visual{height:250px}
+  .coaching-visual span{width:39vw;height:39vw;margin-left:-10vw;font-size:10px}
+  .app-visual>div{width:126px;height:220px;border-radius:28px;padding:16px}
+  .app-visual b{font-size:24vw}
+  .writing-visual span{font-size:12vw}
+  .project-copy{grid-template-columns:minmax(0,1fr);gap:14px}
+  .project-copy h3{font-size:29px}
+  .project-copy a,.button-light{min-height:44px;align-items:center}
+  .credential-list{grid-template-columns:1fr}
+  .credential-list article{padding:26px 14px}
+  .credential-list h3{font-size:24px;margin:30px 0 0}
+  .coaching{min-height:auto;padding:68px 22px 82px}
+  .coach-copy{margin:120px 0 0}
+  .coach-copy h2{margin:26px 0 34px}
+  .coach-copy>p:not(.eyebrow){margin:0 0 34px}
+  .button-light{width:100%;justify-content:space-between;margin-left:0}
+  .coach-orbit{width:100vw;height:100vw;right:-54vw;top:5%}
+  footer{padding:70px 22px 32px}
+  .footer-lead{padding:84px 0 96px}
+  .footer-lead h2{margin:26px 0 38px}
+  .contact-link{min-height:48px;align-items:center}
+  .privacy-note{font-size:12px;line-height:1.7}
+  .footer-bottom{grid-template-columns:1fr;gap:28px}
+  .footer-bottom>div{flex-wrap:wrap}
+  .footer-bottom a{min-height:44px;display:flex;align-items:center}
+}
