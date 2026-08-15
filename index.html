@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#f2efe6">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="FUJIWARA WORKS — Cloud, systems, coaching, and ideas.">
@@ -27,7 +28,8 @@
 <main>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="FUJIWARA WORKS ホーム"><span class="brand-f">F</span><span>FUJIWARA<br>WORKS</span></a>
-    <nav aria-label="メインナビゲーション"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#coaching">Coaching</a></nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="メニューを開く">MENU</button>
+    <nav id="primary-navigation" aria-label="メインナビゲーション"><a href="#about">About</a><a href="#expertise">Expertise</a><a class="mobile-only" href="#career">Career</a><a href="#projects"><span class="desktop-only">Projects</span><span class="mobile-only">Projects &amp; Activities</span></a><a class="mobile-only" href="#credentials">Credentials</a><a href="#coaching">Coaching</a><a class="mobile-only" href="#contact">Contact</a></nav>
     <a class="header-cta" href="#contact">Contact <span aria-hidden="true">↗</span></a>
   </header>
 
@@ -85,7 +87,7 @@
     </div>
   </section>
 
-  <section class="credentials section-pad">
+  <section class="credentials section-pad" id="credentials">
     <p class="section-index">05 — CREDENTIALS</p>
     <div><h2>Cloud<br><em>credentials.</em></h2><div class="credential-list"><article><span>GOOGLE CLOUD</span><h3>Professional<br>Cloud Architect</h3></article><article><span>GOOGLE CLOUD</span><h3>Associate<br>Cloud Engineer</h3></article><article><span>AMAZON WEB SERVICES</span><h3>Solutions Architect<br>— Associate</h3></article></div></div>
   </section>
