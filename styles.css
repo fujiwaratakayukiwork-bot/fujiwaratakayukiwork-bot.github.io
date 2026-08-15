@@ -15,6 +15,17 @@ footer{background:#0c0c0b;color:#f4f1e8;padding:85px 6vw 35px}.footer-lead{paddi
 .menu-toggle,.mobile-only{display:none}
 :where(a,button):focus-visible{outline:3px solid var(--orange);outline-offset:4px}
 img,svg{max-width:100%;height:auto}
+.services{background:var(--paper);color:var(--ink)}
+.services .skill-list{border-top:1px solid var(--ink)}
+.services .skill-list article{border-bottom:1px solid var(--line)}
+.services .skill-list article:hover{background:rgba(17,17,15,.04)}
+.services .skill-list p{color:#5e5d57}
+.services .tags span{border-color:var(--line)}
+.writing{border-top:1px solid #444}
+
+@media (min-width:1024px) and (max-width:1180px){
+  .site-header nav{gap:14px;font-size:10px}
+}
 
 @media (min-width:641px) and (max-width:1023px){
   .site-header{grid-template-columns:1fr auto auto;padding:20px 24px;gap:22px}
