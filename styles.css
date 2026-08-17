@@ -22,6 +22,7 @@ img,svg{max-width:100%;height:auto}
 .services .skill-list p{color:#5e5d57}
 .services .tags span{border-color:var(--line)}
 .writing{border-top:1px solid #444}
+.service-details-link{display:inline-flex;align-items:center;gap:24px;min-height:44px;margin-top:18px;padding-bottom:4px;border-bottom:1px solid;font:11px var(--font-mono);letter-spacing:.06em}.contact-options{display:flex;flex-direction:column;align-items:flex-start}.contact-options .contact-link{overflow-wrap:anywhere}
 
 @media (min-width:1024px) and (max-width:1180px){
   .site-header nav{gap:14px;font-size:10px}
@@ -119,6 +120,7 @@ img,svg{max-width:100%;height:auto}
   .footer-lead{padding:84px 0 96px}
   .footer-lead h2{margin:26px 0 38px}
   .contact-link{min-height:48px;align-items:center}
+  .contact-options{gap:10px}.contact-options .contact-link{font-size:clamp(20px,6.2vw,28px)}
   .privacy-note{font-size:12px;line-height:1.7}
   .footer-bottom{grid-template-columns:1fr;gap:28px}
   .footer-bottom>div{flex-wrap:wrap}
