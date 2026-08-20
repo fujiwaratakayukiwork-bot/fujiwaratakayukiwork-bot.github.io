@@ -15,6 +15,14 @@ footer{background:#0c0c0b;color:#f4f1e8;padding:85px 6vw 35px}.footer-lead{paddi
 .menu-toggle,.mobile-only{display:none}
 :where(a,button):focus-visible{outline:3px solid var(--orange);outline-offset:4px}
 img,svg{max-width:100%;height:auto}
+.about-heading-phrase,.about-heading-second{display:block}
+.about-heading-phrase{width:max-content;max-width:100%;white-space:nowrap}
+.about-profile{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.55fr);gap:clamp(32px,5vw,72px);align-items:start;margin:60px 0 90px}
+.about-profile-figure{width:100%;max-width:340px;margin:0}
+.about-profile-image{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.about-profile-copy>.eyebrow{margin:0 0 30px}
+.about-profile-copy .about-grid{grid-template-columns:1fr;gap:18px;margin:0 0 32px}
+.about-profile-note{margin:0;padding-top:24px;border-top:1px solid var(--line);font-size:clamp(17px,1.4vw,20px);line-height:1.8}
 .services{background:var(--paper);color:var(--ink)}
 .services .skill-list{border-top:1px solid var(--ink)}
 .services .skill-list article{border-bottom:1px solid var(--line)}
@@ -97,7 +105,13 @@ img,svg{max-width:100%;height:auto}
   .business-support-banner-link,.service-details-link{width:100%;max-width:none}
   .eyebrow,.section-index,.project-meta,.tags,.skill-no{font-size:11px}
   .section-pad{padding:76px 22px}
+  .about-profile{grid-template-columns:minmax(0,1fr);gap:28px;margin:34px 0 48px}
+  .about-profile-figure{width:min(78vw,300px)}
+  .about-profile-copy>.eyebrow{margin-bottom:24px}
+  .about-profile-copy .about-grid{gap:12px;margin:0 0 26px}
+  .about-profile-note{padding-top:20px;font-size:17px}
   .about h2,.section-head h2,.career h2,.credentials h2,.coach-copy h2,.footer-lead h2{font-size:clamp(39px,12vw,52px);line-height:1.03}
+  .about h2{font-size:clamp(36px,10.8vw,50px)}
   .about-grid p,.skill-list p,.timeline p,.project-copy p,.coach-copy>p:not(.eyebrow),.footer-lead>p:not(.eyebrow){font-size:16px}
   .about-grid{margin:34px 0 48px}
   .stat-row{grid-template-columns:repeat(2,1fr)}
