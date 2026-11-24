@@ -1,0 +1,51 @@
+/* Print the service page on A4 to reproduce the downloadable two-page guide. */
+@page { size: A4; margin: 13mm 15mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #171713; font: 10pt/1.48 "Hiragino Sans", "Yu Gothic", sans-serif; }
+a { color: inherit; }
+h1, h2, h3, p, ul, ol { margin: 0; }
+h1, h2, h3 { font-weight: 600; }
+h1 { margin: 3mm 0; font-size: 26pt; line-height: 1.24; }
+h2 { margin-bottom: 2mm; font-size: 16pt; line-height: 1.35; }
+h3 { margin-bottom: 1mm; font-size: 11pt; }
+h1 br, h2 br { display: none; }
+em { font-style: normal; }
+.site-header { padding-bottom: 3mm; margin-bottom: 5mm; border-bottom: 1pt solid; }
+.brand { display: inline-flex; align-items: center; gap: 3mm; font: bold 11pt/1 sans-serif; text-decoration: none; }
+.brand-f { padding: 2.5mm; border: 1pt solid; font-size: 16pt; }
+.eyebrow, .section-index { margin-bottom: 1.2mm; color: #29459a; font: 8pt/1.4 monospace; letter-spacing: .05em; }
+.business-section { margin-top: 4mm; padding-top: 2mm; border-top: .5pt solid #a7a79e; }
+.business-hero-lead, .section-lead { line-height: 1.65; }
+.business-hero-facts { display: flex; gap: 8mm; margin: 2.5mm 0; }
+.business-hero-facts span { margin-left: 2mm; font: 7.5pt monospace; }
+.business-hero-facts b { font-size: 11pt; }
+ul { padding-left: 1.2em; }
+.issue-list { columns: 2; column-gap: 7mm; margin-top: 1mm; }
+li, article { break-inside: avoid; }
+.health-check-grid, .option-grid, .boundary-grid, .about-service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm 6mm;
+}
+.health-check-intro { grid-column: 1 / -1; }
+.option-grid h3 br { display: none; }
+.option-grid article, .detail-panel { padding-left: 3mm; border-left: 1.5pt solid #29459a; }
+.option-grid ul { margin-top: 1.5mm; }
+.process-section { break-before: page; margin-top: 0; padding-top: 0; border: 0; }
+.service-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 3mm; list-style: none; padding: 0; }
+.service-flow li { padding-left: 2mm; border-left: 1pt solid #a7a79e; }
+.service-flow h3 { font-size: 10pt; }
+.exclusion-box { margin-top: 2mm; }
+.security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; }
+.security-grid p, .exclusion-box p, .service-flow p { font-size: 9pt; }
+footer { margin-top: 4mm; padding-top: 2mm; border-top: 1pt solid; }
+.contact-link { font-size: 12pt; font-weight: 600; }
+.contact-caution { font-size: 8pt; }
+.site-header nav, .menu-toggle, .header-cta, .business-hero-system, .service-actions,
+.overview-grid > div, .detail-panel > span, .option-number, .service-flow span,
+.remote-statement .eyebrow, .exclusion-box .eyebrow, .security-grid article > span,
+.about-service-grid .text-link, .brochure-section, footer .eyebrow, footer h2,
+footer .footer-lead > p:not(.contact-caution), .privacy-note, .footer-bottom { display: none; }
+
+.remote-section h2, .about-service h2 { font-size: 12pt; }
+#flow ~ .business-section { margin-top: 3mm; }
